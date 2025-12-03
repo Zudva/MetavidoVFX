@@ -2,6 +2,19 @@
     <Style src="project://database/Assets/UI/Monitor.uss?fileID=7433441132597879392&amp;guid=fd1182e218f1343e0ba5970fec0a66d8&amp;type=3#Monitor" />
     <engine:VisualElement name="root" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0;" />
     <engine:VisualElement name="video-view" style="width: 320px; height: 90px; position: absolute; right: 8px; bottom: 8px; border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; background-color: rgba(75, 75, 75, 0.5); -unity-background-image-tint-color: rgba(255, 255, 255, 0.8);" />
+    <engine:VisualElement name="control-panel" class="control-panel">
+        <engine:VisualElement class="control-row">
+            <engine:Label text="Distortion" class="control-label" />
+            <engine:Slider name="distortion-slider" class="control-slider" low-value="-0.5" high-value="0.5" value="-0.2" />
+            <engine:Button name="distortion-reset" class="control-button" text="Reset" />
+        </engine:VisualElement>
+        <engine:VisualElement class="control-row">
+            <engine:Label text="Exposure" class="control-label" />
+            <engine:Slider name="exposure-slider" class="control-slider" low-value="-3" high-value="3" value="0" />
+            <engine:Button name="exposure-reset" class="control-button" text="Default" />
+        </engine:VisualElement>
+        <engine:DropdownField name="exposure-preset" class="control-dropdown" label="Preset" />
+    </engine:VisualElement>
     <engine:VisualElement name="info-box" style="margin-top: 6px; margin-right: 6px; margin-bottom: 6px; margin-left: 6px;">
         <engine:VisualElement name="row1" class="text-row">
             <engine:Label text="https://www.unity3d.com" name="url-label" />
@@ -10,7 +23,7 @@
             <engine:Label text="Metadata&#10;1: (0.00, 0.00, 0.00)&#10;2: (0.00, 0.00, 0.00)&#10;3: (0.00, 0.00, 0.00)" name="metadata-label" />
         </engine:VisualElement>
         <engine:VisualElement name="row3" class="text-row">
-            <engine:Label text="Drag: Rotate Camera&#10;Scroll: Zoom In/Out&#10;(Mouse wheel or two-finger swipe)" name="inst-label" />
+            <engine:Label text="Drag: Rotate Camera&#10;Scroll: Zoom In/Out&#10;Distortion/Exposure: Use sliders at left" name="inst-label" />
         </engine:VisualElement>
     </engine:VisualElement>
 </engine:UXML>

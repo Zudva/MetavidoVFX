@@ -20,3 +20,46 @@
 .text-row {
     flex-direction: row;
 }
+
+.control-panel {
+    position: absolute;
+    left: 8px;
+    bottom: 8px;
+    right: auto;
+    top: auto;
+    width: 320px;
+    background-color: rgba(0, 0, 0, 0.74);
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.control-row {
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+.control-label {
+    min-width: 90px;
+    color: rgb(255, 255, 255);
+}
+
+.control-slider {
+    flex-grow: 1;
+}
+
+.control-button {
+    min-width: 70px;
+}
+
+.control-dropdown {
+    width: 100%;
+}
