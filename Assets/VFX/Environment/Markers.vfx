@@ -377,7 +377,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616906}
   - {fileID: 8926484042661616592}
   dataType: 0
-  capacity: 96
+  capacity: 84
   stripCapacity: 16
   particlePerStripCount: 16
   needsComputeBounds: 0
@@ -3696,7 +3696,7 @@ MonoBehaviour:
   m_Description: 
   m_AttributeName: Offset
   m_Type: 1
-  m_IsExpanded: 0
+  m_IsExpanded: 1
 --- !u!114 &8926484042661616749
 MonoBehaviour:
   m_ObjectHideFlags: 0
