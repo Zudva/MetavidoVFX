@@ -30,13 +30,37 @@ public sealed class VfxSwitcher : MonoBehaviour
     {
         _proxyColor = _proxyVfx.GetVector4("Line Color");
 
-        for (var sel = 0;; sel = (sel + 1) % _vfxList.Length)
-        {
-            for (var i = 0; i < _vfxList.Length; i++)
-                _vfxList[i].SetBool("Spawn", i == sel);
+        // Ищем эффект с именем "Voxels" и включаем только его.
+        VisualEffect voxels = null;
 
-            await Awaitable.WaitForSecondsAsync(Interval);
+        foreach (var vfx in _vfxList)
+        {
+            if (vfx == null) continue;
+
+            if (vfx.gameObject.name == "Voxels")
+            {
+                voxels = vfx;
+                vfx.SetBool("Spawn", true);
+            }
+            else
+            {
+                vfx.SetBool("Spawn", false);
+            }
         }
+
+        // Если вдруг объект переименуют, на всякий случай включим первый ненулевой.
+        if (voxels == null)
+        {
+            foreach (var vfx in _vfxList)
+            {
+                if (vfx == null) continue;
+                voxels = vfx;
+                voxels.SetBool("Spawn", true);
+                break;
+            }
+        }
+
+        // Больше никаких переключений не делаем.
     }
 
     void Update()
